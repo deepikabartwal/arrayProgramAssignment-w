@@ -36,6 +36,15 @@ const reverseElementOrder = function(numbers){
   }
   return reverseOrderNUmber
 }
+
+const getAlternateNumbers = function(numbers){
+  alternateNumbers = [];
+  for(let index =0;index<numbers.length;index+=2){
+    alternateNumbers.push(numbers[index]);
+  }
+  return alternateNumbers;
+}
+exports.alternateNumbers = getAlternateNumbers;
 exports.reversedNumbers = reverseElementOrder;
 exports.evenNumbers = segregateEven;
 exports.oddNumbers = segregateOdd;
