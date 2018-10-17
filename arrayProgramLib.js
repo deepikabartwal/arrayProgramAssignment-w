@@ -44,8 +44,31 @@ const getAlternateNumbers = function(numbers){
   }
   return alternateNumbers;
 }
+
+const greatestNumber = function(numbers){
+  let greatestNumberCandidate = numbers[0];
+  for(number of numbers){
+    if(greatestNumberCandidate<number){
+      greatestNumberCandidate=number;
+    }
+  }
+  return greatestNumberCandidate;
+}
+
+const lowestNumber = function(numbers){
+  let lowestNumberCandidate = numbers[0];
+  for(number of numbers){
+    if(lowestNumberCandidate>number){
+      lowestNumberCandidate=number;
+    }
+  }
+  return lowestNumberCandidate;
+}
+
+exports.lowestNumber = lowestNumber;
+exports.greatestNumber = greatestNumber;
 exports.alternateNumbers = getAlternateNumbers;
 exports.reversedNumbers = reverseElementOrder;
 exports.evenNumbers = segregateEven;
 exports.oddNumbers = segregateOdd;
-exports.sumOfAllNumbers = addAllNumbers;
+exports.sumOfAllNumbers= addAllNumbers;

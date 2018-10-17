@@ -5,6 +5,8 @@ let segregateEvenNumbers = lib.evenNumbers;
 let segregateOddNumbers = lib.oddNumbers;
 let reverseOrderOfNumbers = lib.reversedNumbers;
 let alternateNumbers = lib.alternateNumbers;
+let greatestNumber = lib.greatestNumber;
+let lowestNumber = lib.lowestNumber;
 
 //2 evens
 assert.deepEqual(segregateEvenNumbers([1,2,3,4]),[2,4]);
@@ -24,4 +26,12 @@ assert.deepEqual(reverseOrderOfNumbers([11,12,13,14]),[14,13,12,11]);
 
 //alternate numbers testing
 assert.deepEqual(alternateNumbers([1,2,3,4]),[1,3]);
-assert.deepEqual(alternateNumbers([2,1,4,3]),[1,3]);
+assert.deepEqual(alternateNumbers([2,1,4,3]),[2,4]);
+
+//greatest number in array of number testing
+assert.deepEqual(greatestNumber([]),undefined);
+assert.deepEqual(greatestNumber([23,0,15,167]),167);
+
+//lowest number in array of number testing
+assert.deepEqual(lowestNumber([]),undefined);
+assert.deepEqual(lowestNumber([2,0,9,5,10]),0);
