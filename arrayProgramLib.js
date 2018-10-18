@@ -1,10 +1,10 @@
-const isEven = function(number){
+const isNumberEven = function(number){
   return(number%2==0);
 }
 const segregateEven = function(numbers){
   let evenNumbers = [];
   for(let index = 0; index<numbers.length; index++){
-    if(isEven(numbers[index])){
+    if(isNumberEven(numbers[index])){
       evenNumbers.push(numbers[index]);
     }
   }
@@ -14,7 +14,7 @@ const segregateEven = function(numbers){
 const segregateOdd = function(numbers){
   let oddNumbers = [];
   for(let index = 0; index<numbers.length; index++){
-    if(!isEven(numbers[index])){
+    if(!isNumberEven(numbers[index])){
       oddNumbers.push(numbers[index]);
     }
   }
@@ -67,9 +67,6 @@ const lowestNumber = function(numbers){
 
 const calculateAverage = function(numbers){
   average = addAllNumbers(numbers)/numbers.length;
-  if(numbers.length==0){
-    return 0;
-  }
   return average;
 }
 
