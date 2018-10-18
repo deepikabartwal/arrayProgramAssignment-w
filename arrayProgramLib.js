@@ -65,6 +65,15 @@ const lowestNumber = function(numbers){
   return lowestNumberCandidate;
 }
 
+const calculateAverage = function(numbers){
+  average = addAllNumbers(numbers)/numbers.length;
+  if(numbers.length==0){
+    return 0;
+  }
+  return average;
+}
+
+exports.calculateAverage = calculateAverage;
 exports.lowestNumber = lowestNumber;
 exports.greatestNumber = greatestNumber;
 exports.alternateNumbers = getAlternateNumbers;

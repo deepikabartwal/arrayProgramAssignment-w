@@ -1,15 +1,16 @@
-let assert = require("assert");
-let lib= require("./arrayProgramLib.js");
-let sum = lib.sumOfAllNumbers;
-let segregateEvenNumbers = lib.evenNumbers;
-let segregateOddNumbers = lib.oddNumbers;
-let reverseOrderOfNumbers = lib.reversedNumbers;
-let alternateNumbers = lib.alternateNumbers;
-let greatestNumber = lib.greatestNumber;
-let lowestNumber = lib.lowestNumber;
+const assert = require("assert");
+const lib= require("./arrayProgramLib.js");
+const sum = lib.sumOfAllNumbers;
+const segregateEvenNumbers = lib.evenNumbers;
+const segregateOddNumbers = lib.oddNumbers;
+const reverseOrderOfNumbers = lib.reversedNumbers;
+const alternateNumbers = lib.alternateNumbers;
+const greatestNumber = lib.greatestNumber;
+const lowestNumber = lib.lowestNumber;
+const calculateAverage = lib.calculateAverage;
 
-//2 evens
-assert.deepEqual(segregateEvenNumbers([1,2,3,4]),[2,4]);
+//two test for even number function.
+assert.deepEqual(segregateEvenNumbers([]),[]);
 assert.deepEqual(segregateEvenNumbers([6,7,8,9]),[6,8]);
 
 //2odds.
@@ -35,3 +36,7 @@ assert.deepEqual(greatestNumber([23,0,15,167]),167);
 //lowest number in array of number testing
 assert.deepEqual(lowestNumber([]),undefined);
 assert.deepEqual(lowestNumber([2,0,9,5,10]),0);
+
+//calculate average of all numbers in array
+assert.deepEqual(calculateAverage([]),0);
+assert.deepEqual(calculateAverage([1]),1);
