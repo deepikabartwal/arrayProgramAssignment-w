@@ -60,3 +60,10 @@ assert.deepEqual(countOddNumbers([]),0);
 assert.deepEqual(countOddNumbers([2,4]),0);
 assert.deepEqual(countOddNumbers([1,3]),2);
 assert.deepEqual(countOddNumbers([22,13,45,23,16,19,2]),4);
+
+// test for counting numbers above threshold value
+assert.deepEqual(countNumbersAboveThreshold([],1),0);
+assert.deepEqual(countNumbersAboveThreshold([0],1),0);
+assert.deepEqual(countNumbersAboveThreshold([1,3],1),1);
+assert.deepEqual(countNumbersAboveThreshold([1,2,3],1),2);
+assert.deepEqual(countNumbersAboveThreshold([2,3,4,5],1),4);
