@@ -67,9 +67,42 @@ const lowestNumber = function(numbers){
 
 const calculateAverage = function(numbers){
   average = addAllNumbers(numbers)/numbers.length;
+  if(numbers.length==0){
+    return 0;
+  }
   return average;
 }
 
+const mapLengthOfNames =function(names){
+  lengths=[];
+  for(name of names){
+    lengths.push(name.length);
+  }
+  return lengths;
+}
+
+const countEvenNumbers = function(numbers){
+  let numbersOfEvenNumbers = 0;
+  for(number of numbers){
+    if(isNumberEven(number)){
+      numbersOfEvenNumbers++;
+    }
+  }
+  return numbersOfEvenNumbers;
+}
+
+const countOddNumbers = function(numbers){
+  let numbersOfOddNumbers = 0;
+  for(number of numbers){
+    if(!isNumberEven(number)){
+      numbersOfOddNumbers++;
+    }
+  }
+  return numbersOfOddNumbers;
+}
+
+exports.countEvenNumbers = countEvenNumbers;
+exports.mapLengthOfNames = mapLengthOfNames;
 exports.calculateAverage = calculateAverage;
 exports.lowestNumber = lowestNumber;
 exports.greatestNumber = greatestNumber;

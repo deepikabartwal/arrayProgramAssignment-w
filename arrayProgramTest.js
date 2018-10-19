@@ -8,6 +8,8 @@ const alternateNumbers = lib.alternateNumbers;
 const greatestNumber = lib.greatestNumber;
 const lowestNumber = lib.lowestNumber;
 const calculateAverage = lib.calculateAverage;
+const mapLengthOfNames = lib.mapLengthOfNames;
+const countEvenNumbers = lib.countEvenNumbers;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -40,3 +42,14 @@ assert.deepEqual(lowestNumber([2,0,9,5,10]),0);
 //calculate average of all numbers in array
 assert.deepEqual(calculateAverage([]),0);
 assert.deepEqual(calculateAverage([1]),1);
+
+//testing lengths of array elements in given array
+assert.deepEqual(mapLengthOfNames([]),[]);
+assert.deepEqual(mapLengthOfNames(["a"]),[1]);
+
+//testing even number counting function
+assert.deepEqual(countEvenNumbers([]),0);
+assert.deepEqual(countEvenNumbers([1,3]),0);
+assert.deepEqual(countEvenNumbers([1,2,4]),2);
+assert.deepEqual(countEvenNumbers([22,13,45,16,18,2]),4);
+
