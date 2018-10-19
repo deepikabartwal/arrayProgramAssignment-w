@@ -101,6 +101,18 @@ const countOddNumbers = function(numbers){
   return numbersOfOddNumbers;
 }
 
+const countNumbersAboveThreshold = function(numbers,thresholdValue){
+  let numbersAboveThreshold = 0;
+  for(number of numbers){
+    if(number>thresholdValue){
+      numbersAboveThreshold++;
+    }
+  }
+  return numbersAboveThreshold;
+}
+
+exports.countNumbersAboveThreshold = countNumbersAboveThreshold;
+exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;
 exports.mapLengthOfNames = mapLengthOfNames;
 exports.calculateAverage = calculateAverage;

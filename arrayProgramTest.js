@@ -10,6 +10,8 @@ const lowestNumber = lib.lowestNumber;
 const calculateAverage = lib.calculateAverage;
 const mapLengthOfNames = lib.mapLengthOfNames;
 const countEvenNumbers = lib.countEvenNumbers;
+const countOddNumbers = lib.countOddNumbers;
+const countNumbersAboveThreshold = lib.countNumbersAboveThreshold;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -53,3 +55,8 @@ assert.deepEqual(countEvenNumbers([1,3]),0);
 assert.deepEqual(countEvenNumbers([1,2,4]),2);
 assert.deepEqual(countEvenNumbers([22,13,45,16,18,2]),4);
 
+// tests for countOddNumbers function
+assert.deepEqual(countOddNumbers([]),0);
+assert.deepEqual(countOddNumbers([2,4]),0);
+assert.deepEqual(countOddNumbers([1,3]),2);
+assert.deepEqual(countOddNumbers([22,13,45,23,16,19,2]),4);
