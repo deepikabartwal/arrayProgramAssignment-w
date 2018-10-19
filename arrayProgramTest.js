@@ -13,6 +13,10 @@ const countEvenNumbers = lib.countEvenNumbers;
 const countOddNumbers = lib.countOddNumbers;
 const countNumbersAboveThreshold = lib.countNumbersAboveThreshold;
 const countNumbersBelowThreshold = lib.countNumbersBelowThreshold;
+const findPositionOfNumber = lib.findPositionOfNumber;
+const isInAscendingOrder = lib.isInAscendingOrder
+const isInDescendingOrder = lib.isInDescendingOrder;
+const extractDigits = lib.extractDigits;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -88,3 +92,34 @@ assert.deepEqual(countNumbersBelowThreshold([1,3],2),1);
 assert.deepEqual(countNumbersBelowThreshold([1,2,3],2),1);
 assert.deepEqual(countNumbersBelowThreshold([2,3,4,5],6),4);
 console.log("tests for counting numbers below threshold value in list");
+
+//test for finding position of number in given number list
+assert.deepEqual(findPositionOfNumber([],0),-1)
+assert.deepEqual(findPositionOfNumber([1],0),-1);
+assert.deepEqual(findPositionOfNumber([1,2],1),0);
+assert.deepEqual(findPositionOfNumber([1,3,2,5,],2),2);
+assert.deepEqual(findPositionOfNumber([1,2,3,9,8,7,4,6,5],8),4);
+console.log("tests for finding position of number in given list passed");
+
+//tests for checking if given number list is in ascending order
+assert.equal(isInAscendingOrder([]),true);
+assert.equal(isInAscendingOrder([1,2]),true);
+assert.equal(isInAscendingOrder([2,1]),false);
+assert.equal(isInAscendingOrder([1,3,5,7]),true);
+assert.equal(isInAscendingOrder([1,2,5,3,7]),false);
+console.log("tests for checking if list is in ascending order");
+
+//tests for checking if given number list is in descending order
+assert.equal(isInDescendingOrder([]),true);
+assert.equal(isInDescendingOrder([1,2]),false);
+assert.equal(isInDescendingOrder([2,1]),true);
+assert.equal(isInDescendingOrder([4,3,2,1,0]),true);
+console.log("tests for checking if the given list is in descending order passed");
+
+//tests for extractingDigits from a given number
+assert.deepEqual(extractDigits([]),[]);
+assert.deepEqual(extractDigits(1),[1]);
+assert.deepEqual(extractDigits(14),[1,4]);
+assert.deepEqual(extractDigits(123),[1,2,3]);
+assert.deepEqual(extractDigits(2468),[2,4,6,8]);
+console.log("tests for extracting digits out of numbers passed");

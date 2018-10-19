@@ -1,6 +1,14 @@
 const isNumberEven = function(number){
   return(number%2==0);
 }
+const isSmaller = function(number1,number2){
+  return number1<number2;
+}
+
+const isGreater = function(number1,number2){
+  return number1>number2;
+}
+
 const segregateEven = function(numbers){
   let evenNumbers = [];
   for(let index = 0; index<numbers.length; index++){
@@ -121,6 +129,47 @@ const countNumbersBelowThreshold = function(numbers,thresholdValue){
   return numbersBelowThreshold;
 }
 
+const findPositionOfNumber = function(numberList,givenNumber){
+  for(let position =0; position<numberList.length;position++){
+    if(numberList[position]==givenNumber){
+      return position;
+    }
+  }
+  return -1;
+}
+
+const isInAscendingOrder = function(numberList){
+  for( let index = 0;index<numberList.length-1;index++){
+    if(numberList[index]>numberList[index+1]){
+      return false;
+    }
+  }
+  return true;
+}
+
+const isInDescendingOrder = function(numberList){
+  for( let index =0; index<numberList.length-1; index++){
+    if(numberList[index]<numberList[index+1]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+const extractDigits = function(number){
+  givenNumber=number.toString();
+  digits=[];
+  for(let index =0; index<givenNumber.length;index++){
+    digits.push(givenNumber[index]%10);
+  }
+  return digits;
+}
+
+exports.extractDigits = extractDigits;
+exports.isInAscendingOrder = isInAscendingOrder;
+exports.isInDescendingOrder = isInDescendingOrder;
+exports.findPositionOfNumber = findPositionOfNumber;
 exports.countNumbersBelowThreshold = countNumbersBelowThreshold;
 exports.countNumbersAboveThreshold = countNumbersAboveThreshold;
 exports.countOddNumbers = countOddNumbers;
