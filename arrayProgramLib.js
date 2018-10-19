@@ -111,6 +111,17 @@ const countNumbersAboveThreshold = function(numbers,thresholdValue){
   return numbersAboveThreshold;
 }
 
+const countNumbersBelowThreshold = function(numbers,thresholdValue){
+  let numbersBelowThreshold = 0;
+  for(number of numbers){
+    if(number<thresholdValue){
+      numbersBelowThreshold++;
+    }
+  }
+  return numbersBelowThreshold;
+}
+
+exports.countNumbersBelowThreshold = countNumbersBelowThreshold;
 exports.countNumbersAboveThreshold = countNumbersAboveThreshold;
 exports.countOddNumbers = countOddNumbers;
 exports.countEvenNumbers = countEvenNumbers;

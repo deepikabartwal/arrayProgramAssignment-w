@@ -12,54 +12,66 @@ const mapLengthOfNames = lib.mapLengthOfNames;
 const countEvenNumbers = lib.countEvenNumbers;
 const countOddNumbers = lib.countOddNumbers;
 const countNumbersAboveThreshold = lib.countNumbersAboveThreshold;
+const countNumbersBelowThreshold = lib.countNumbersBelowThreshold;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
 assert.deepEqual(segregateEvenNumbers([6,7,8,9]),[6,8]);
+console.log("tests for segregating even numbers passed");
 
 //2odds.
 assert.deepEqual(segregateOddNumbers([11,13,15,18]),[11,13,15]);
 assert.deepEqual(segregateOddNumbers([1,5,3,4]),[1,5,3]);
+console.log("tests for segregating odd numbers passed")
 
 //sum of all number testing
 assert.equal(sum([1,2,3,4,5]),15);
 assert.equal(sum([1,2,3,4,5,6,7,8,9,10]),55);
+console.log("tests for adding all numbers in list passed");
 
 //reversed number array
 assert.deepEqual(reverseOrderOfNumbers([1,2,3,4]),[4,3,2,1]);
 assert.deepEqual(reverseOrderOfNumbers([11,12,13,14]),[14,13,12,11]);
+console.log("tests for reversing numbers in list passed");
 
 //alternate numbers testing
 assert.deepEqual(alternateNumbers([1,2,3,4]),[1,3]);
 assert.deepEqual(alternateNumbers([2,1,4,3]),[2,4]);
+console.log("test for selecting alternate numbers in list passed");
 
 //greatest number in array of number testing
 assert.deepEqual(greatestNumber([]),undefined);
 assert.deepEqual(greatestNumber([23,0,15,167]),167);
+console.log("tests for finding greatest number in list passed");
 
 //lowest number in array of number testing
 assert.deepEqual(lowestNumber([]),undefined);
 assert.deepEqual(lowestNumber([2,0,9,5,10]),0);
+console.log("tests for finding lowest number in list passed");
 
 //calculate average of all numbers in array
 assert.deepEqual(calculateAverage([]),0);
 assert.deepEqual(calculateAverage([1]),1);
+console.log("tests for calculating average of list of numbers passed");
 
-//testing lengths of array elements in given array
+//testing lengths of names in given list of names
 assert.deepEqual(mapLengthOfNames([]),[]);
 assert.deepEqual(mapLengthOfNames(["a"]),[1]);
+console.log("tests for lengths of names in list of names passed");
 
 //testing even number counting function
 assert.deepEqual(countEvenNumbers([]),0);
 assert.deepEqual(countEvenNumbers([1,3]),0);
 assert.deepEqual(countEvenNumbers([1,2,4]),2);
 assert.deepEqual(countEvenNumbers([22,13,45,16,18,2]),4);
+console.log("tests for counting even numbers in a given list passed");
 
 // tests for countOddNumbers function
 assert.deepEqual(countOddNumbers([]),0);
 assert.deepEqual(countOddNumbers([2,4]),0);
 assert.deepEqual(countOddNumbers([1,3]),2);
 assert.deepEqual(countOddNumbers([22,13,45,23,16,19,2]),4);
+console.log("tests for counting odd numbers in given list passed");
 
 // test for counting numbers above threshold value
 assert.deepEqual(countNumbersAboveThreshold([],1),0);
@@ -67,3 +79,12 @@ assert.deepEqual(countNumbersAboveThreshold([0],1),0);
 assert.deepEqual(countNumbersAboveThreshold([1,3],1),1);
 assert.deepEqual(countNumbersAboveThreshold([1,2,3],1),2);
 assert.deepEqual(countNumbersAboveThreshold([2,3,4,5],1),4);
+console.log("tests for counting numbers above threshold value in list");
+
+// test for counting numbers below threshold value
+assert.deepEqual(countNumbersBelowThreshold([],1),0);
+assert.deepEqual(countNumbersBelowThreshold([4],1),0);
+assert.deepEqual(countNumbersBelowThreshold([1,3],2),1);
+assert.deepEqual(countNumbersBelowThreshold([1,2,3],2),1);
+assert.deepEqual(countNumbersBelowThreshold([2,3,4,5],6),4);
+console.log("tests for counting numbers below threshold value in list");
