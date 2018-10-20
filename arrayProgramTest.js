@@ -19,6 +19,7 @@ const isInDescendingOrder = lib.isInDescendingOrder;
 const extractDigits = lib.extractDigits;
 const zipElements = lib.zipElements;
 const rotate = lib.rotate;
+const createPartition = lib.createPartition;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -144,3 +145,11 @@ assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
 assert.deepEqual(rotate(["ram","shyam","sita","radha"],1),["shyam","sita","radha","ram"]);
 assert.deepEqual(rotate(["this","is","an","array","i","made","right","now"],2),["an","array","i","made","right","now","this","is"]);
 console.log("test for rotating list elements are passing");
+
+//test for function to create partition for numbers above and below a given value
+assert.deepEqual(createPartition([],1),[[],[]]);
+assert.deepEqual(createPartition([1,2],1),[[1],[2]]);
+assert.deepEqual(createPartition([1],1),[[1],[]]);
+assert.deepEqual(createPartition([1,2,3,4,5],3),[[1,2,3],[4,5]]);
+assert.deepEqual(createPartition([22,13,41,56,87,95,79,68,2,102],50),[[22,13,41,2],[56,87,95,79,68,102]]);
+console.log("test for partitioning passed");

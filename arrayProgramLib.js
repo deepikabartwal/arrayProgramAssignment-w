@@ -198,6 +198,15 @@ const rotate = function(list,limit){
   return rotatedArray;
 }
 
+const createPartition = function(numbers,limit){
+  partitionList=[[],[]];
+  for(let index = 0;index<numbers.length;index++){
+    partitionList[isGreater(numbers[index],limit)].push(numbers[index]);
+  }
+  return partitionList;
+}
+
+exports.createPartition = createPartition;
 exports.rotate = rotate;
 exports.zipElements = zipElements;
 exports.extractDigits = extractDigits;
