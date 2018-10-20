@@ -1,12 +1,24 @@
 const isNumberEven = function(number){
   return(number%2==0);
 }
+
+const putInNewList = function(list){
+  newList=[];
+  for(let index = 0; index<list.length; index++){
+    newList.push(list[index]);
+  }
+  return newList;
+}
+
 const isSmaller = function(number1,number2){
   return number1<number2;
 }
 
 const isGreater = function(number1,number2){
-  return number1>number2;
+  if(number1>number2){
+  return 1;
+  }
+  return 0;
 }
 
 const segregateEven = function(numbers){
@@ -175,6 +187,18 @@ const zipElements = function(list1,list2){
   return zippingResult;
 }
 
+const rotate = function(list,limit){
+  listToBeRotated = putInNewList(list);
+  rotatedArray = listToBeRotated.splice(limit);
+  for(let count = 0; count < limit; count++){
+    if(list.length>0){
+      rotatedArray.push(list[count]);
+    }
+  }
+  return rotatedArray;
+}
+
+exports.rotate = rotate;
 exports.zipElements = zipElements;
 exports.extractDigits = extractDigits;
 exports.isInAscendingOrder = isInAscendingOrder;

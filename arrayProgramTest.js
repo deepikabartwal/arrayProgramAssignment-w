@@ -18,6 +18,7 @@ const isInAscendingOrder = lib.isInAscendingOrder
 const isInDescendingOrder = lib.isInDescendingOrder;
 const extractDigits = lib.extractDigits;
 const zipElements = lib.zipElements;
+const rotate = lib.rotate;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -134,3 +135,12 @@ assert.deepEqual(zipElements([1,2],[3,4]),[[1,3],[2,4]]);
 assert.deepEqual(zipElements([1,2,3],[4,5]),[[1,4],[2,5]]);
 assert.deepEqual(zipElements([1,2,3],[4,5,6]),[[1,4],[2,5],[3,6]]);
 console.log("tests for zipping elements of two arrays passed");
+
+//tests for rotating list 
+assert.deepEqual(rotate([],1),[]);
+assert.deepEqual(rotate([1],1),[1]);
+assert.deepEqual(rotate(["a","b","c"],2),["c","a","b"]);
+assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
+assert.deepEqual(rotate(["ram","shyam","sita","radha"],1),["shyam","sita","radha","ram"]);
+assert.deepEqual(rotate(["this","is","an","array","i","made","right","now"],2),["an","array","i","made","right","now","this","is"]);
+console.log("test for rotating list elements are passing");
