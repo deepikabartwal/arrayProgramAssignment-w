@@ -17,6 +17,7 @@ const findPositionOfNumber = lib.findPositionOfNumber;
 const isInAscendingOrder = lib.isInAscendingOrder
 const isInDescendingOrder = lib.isInDescendingOrder;
 const extractDigits = lib.extractDigits;
+const zipElements = lib.zipElements;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -123,3 +124,13 @@ assert.deepEqual(extractDigits(14),[1,4]);
 assert.deepEqual(extractDigits(123),[1,2,3]);
 assert.deepEqual(extractDigits(2468),[2,4,6,8]);
 console.log("tests for extracting digits out of numbers passed");
+
+//tests for zipping elements of two lists
+assert.deepEqual(zipElements([],[]),[]);
+assert.deepEqual(zipElements([],[1]),[]);
+assert.deepEqual(zipElements([1],[2]),[[1,2]]);
+assert.deepEqual(zipElements([1],[2,3]),[[1,2]]);
+assert.deepEqual(zipElements([1,2],[3,4]),[[1,3],[2,4]]);
+assert.deepEqual(zipElements([1,2,3],[4,5]),[[1,4],[2,5]]);
+assert.deepEqual(zipElements([1,2,3],[4,5,6]),[[1,4],[2,5],[3,6]]);
+console.log("tests for zipping elements of two arrays passed");

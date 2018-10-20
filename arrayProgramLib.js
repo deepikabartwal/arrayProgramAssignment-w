@@ -166,6 +166,16 @@ const extractDigits = function(number){
   return digits;
 }
 
+const zipElements = function(list1,list2){
+  limit = Math.min(list1.length,list2.length);
+  zippingResult = [];
+  for(let index =0; index<limit;index++){
+    zippingResult.push([list1[index],list2[index]]);
+  }
+  return zippingResult;
+}
+
+exports.zipElements = zipElements;
 exports.extractDigits = extractDigits;
 exports.isInAscendingOrder = isInAscendingOrder;
 exports.isInDescendingOrder = isInDescendingOrder;
