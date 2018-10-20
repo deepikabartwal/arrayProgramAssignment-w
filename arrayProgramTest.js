@@ -20,6 +20,7 @@ const extractDigits = lib.extractDigits;
 const zipElements = lib.zipElements;
 const rotate = lib.rotate;
 const createPartition = lib.createPartition;
+const obtainIntersection = lib.obtainIntersection;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -153,3 +154,11 @@ assert.deepEqual(createPartition([1],1),[[1],[]]);
 assert.deepEqual(createPartition([1,2,3,4,5],3),[[1,2,3],[4,5]]);
 assert.deepEqual(createPartition([22,13,41,56,87,95,79,68,2,102],50),[[22,13,41,2],[56,87,95,79,68,102]]);
 console.log("test for partitioning passed");
+
+//test for obtaining intersection of two numberLists
+assert.deepEqual(obtainIntersection([],[]),[]);
+assert.deepEqual(obtainIntersection([1],[]),[]);
+assert.deepEqual(obtainIntersection([1],[1]),[1]);
+assert.deepEqual(obtainIntersection([1,2],[2]),[2]);
+assert.deepEqual(obtainIntersection([1,2,3,4],[2,4,6,8]),[2,4]);
+console.log("test for obtainIntersection passed");

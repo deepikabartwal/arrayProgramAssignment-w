@@ -206,6 +206,21 @@ const createPartition = function(numbers,limit){
   return partitionList;
 }
 
+const obtainIntersection = function(numberList1,numberList2){
+  intersection =[];
+  listForMatching = [];
+  for(let number of numberList1){
+    listForMatching[number] = number;
+  }
+  for(let number of numberList2){
+    if(listForMatching[number]==number){
+      intersection.push(number);
+    }
+  }
+  return intersection;
+}
+
+exports.obtainIntersection = obtainIntersection;
 exports.createPartition = createPartition;
 exports.rotate = rotate;
 exports.zipElements = zipElements;
