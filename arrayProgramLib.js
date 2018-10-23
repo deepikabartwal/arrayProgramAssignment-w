@@ -51,7 +51,10 @@ const obtainLargerNumber = function(number1,number2){
 }
 
 const isGreater = function(number1,number2){
-  return number1>number2;
+  if(number1>number2){
+  return 1;
+  }
+  return 0;
 }
 
 const segregateEven = function(numbers){
@@ -113,30 +116,29 @@ const countOddNumbers = function(numbers){
   return numbers.filter(isNumberOdd).length;
 }
 
-const countNumbersAboveThreshold = function(numbers,thresholdValue){
-  const isGreaterThanThreshold = function(number){
-    return isGreater(number,thresholdValue);
+const isGreaterThanValue = function(value){
+  return function(number){
+    return number>value;
   }
+}
+const countNumbersAboveThreshold = function(numbers,thresholdValue){
+  isGreaterThanThreshold = isGreaterThanValue(thresholdValue);
   return numbers.filter(isGreaterThanThreshold).length;
 }
 
-const countNumbersBelowThreshold = function(numbers,thresholdValue){
-  let numbersBelowThreshold = 0;
-  for(number of numbers){
-    if(number<thresholdValue){
-      numbersBelowThreshold++;
-    }
+const isSmallerThanValue = function(value){
+  return function(number){
+    return number<value;
   }
-  return numbersBelowThreshold;
+}
+
+const countNumbersBelowThreshold = function(numbers,thresholdValue){
+  isSmallerThanThreshold = isSmallerThanValue(thresholdValue);
+  return numbers.filter(isSmallerThanThreshold).length;
 }
 
 const findPositionOfNumber = function(numberList,givenNumber){
-  for(let position =0; position<numberList.length;position++){
-    if(numberList[position]==givenNumber){
-      return position;
-    }
-  }
-  return -1;
+  return numberList.indexOf(givenNumber)
 }
 
 const isInAscendingOrder = function(numberList){
