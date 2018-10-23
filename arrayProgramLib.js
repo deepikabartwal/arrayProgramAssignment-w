@@ -54,11 +54,7 @@ const addAllNumbers = function(numbers){
 }
 
 const reverseElementOrder = function(numbers){
-  let reverseOrderNUmber = [];
-  for(let index = numbers.length-1;index>=0;index--){
-    reverseOrderNUmber.push(numbers[index]);
-  }
-  return reverseOrderNUmber
+  return numbers.reverse();
 }
 
 const getAlternateNumbers = function(numbers){
