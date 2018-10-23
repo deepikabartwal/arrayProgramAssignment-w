@@ -34,6 +34,14 @@ const isSmaller = function(number1,number2){
   return number1<number2;
 }
 
+const obtainSmallerNumber = function(number1,number2){
+  return Math.min(number1,number2);
+}
+
+const obtainLargerNumber = function(number1,number2){
+  return Math.max(number1,number2);
+}
+
 const isGreater = function(number1,number2){
   if(number1>number2){
   return 1;
@@ -66,23 +74,17 @@ const getAlternateNumbers = function(numbers){
 }
 
 const greatestNumber = function(numbers){
-  let greatestNumberCandidate = numbers[0];
-  for(number of numbers){
-    if(greatestNumberCandidate<number){
-      greatestNumberCandidate=number;
-    }
+  if(numbers.length==0){
+    return undefined;
   }
-  return greatestNumberCandidate;
+  return numbers.reduce(obtainLargerNumber,0);
 }
 
 const lowestNumber = function(numbers){
-  let lowestNumberCandidate = numbers[0];
-  for(number of numbers){
-    if(lowestNumberCandidate>number){
-      lowestNumberCandidate=number;
-    }
+  if(numbers.length==0){
+    return undefined;
   }
-  return lowestNumberCandidate;
+  return numbers.reduce(obtainSmallerNumber,0);
 }
 
 const calculateAverage = function(numbers){
