@@ -22,6 +22,10 @@ const sum = function(number1,number2){
   return number1+number2;
 }
 
+const convertToNumber = function(text){
+  return +text;
+}
+
 const putInNewList = function(list){
   newList=[];
   for(let index = 0; index<list.length; index++){
@@ -88,19 +92,16 @@ const lowestNumber = function(numbers){
 }
 
 const calculateAverage = function(numbers){
-  average = addAllNumbers(numbers)/numbers.length;
-  if(numbers.length==0){
+ sumOfAllNumbers= numbers.reduce(sum,0);
+  countOfNumbers = numbers.length;
+  if(countOfNumbers==0){
     return 0;
   }
-  return average;
+  return sumOfAllNumbers/countOfNumbers;
 }
 
 const mapLengthOfNames =function(names){
-  lengths=[];
-  for(name of names){
-    lengths.push(name.length);
-  }
-  return lengths;
+  return names.map(provideLength);
 }
 
 const countEvenNumbers = function(numbers){
@@ -173,11 +174,8 @@ const isInDescendingOrder = function(numberList){
 
 const extractDigits = function(number){
   givenNumber=number.toString();
-  digits=[];
-  for(let index =0; index<givenNumber.length;index++){
-    digits.push(givenNumber[index]%10);
-  }
-  return digits;
+  digits = givenNumber.split("");
+  return digits.map(convertToNumber);
 }
 
 const zipElements = function(list1,list2){
