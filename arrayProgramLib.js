@@ -2,6 +2,10 @@ const isNumberEven = function(number){
   return(number%2==0);
 }
 
+const isNumberOdd = function(number){
+  return number%2!=0;
+}
+
 const provideEven = function(number){
   if(isNumberEven(number)){
   return number;
@@ -47,10 +51,7 @@ const obtainLargerNumber = function(number1,number2){
 }
 
 const isGreater = function(number1,number2){
-  if(number1>number2){
-  return 1;
-  }
-  return 0;
+  return number1>number2;
 }
 
 const segregateEven = function(numbers){
@@ -105,33 +106,18 @@ const mapLengthOfNames =function(names){
 }
 
 const countEvenNumbers = function(numbers){
-  let numbersOfEvenNumbers = 0;
-  for(number of numbers){
-    if(isNumberEven(number)){
-      numbersOfEvenNumbers++;
-    }
-  }
-  return numbersOfEvenNumbers;
+  return numbers.filter(isNumberEven).length;
 }
 
 const countOddNumbers = function(numbers){
-  let numbersOfOddNumbers = 0;
-  for(number of numbers){
-    if(!isNumberEven(number)){
-      numbersOfOddNumbers++;
-    }
-  }
-  return numbersOfOddNumbers;
+  return numbers.filter(isNumberOdd).length;
 }
 
 const countNumbersAboveThreshold = function(numbers,thresholdValue){
-  let numbersAboveThreshold = 0;
-  for(number of numbers){
-    if(number>thresholdValue){
-      numbersAboveThreshold++;
-    }
+  const isGreaterThanThreshold = function(number){
+    return isGreater(number,thresholdValue);
   }
-  return numbersAboveThreshold;
+  return numbers.filter(isGreaterThanThreshold).length;
 }
 
 const countNumbersBelowThreshold = function(numbers,thresholdValue){
