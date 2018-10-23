@@ -1,5 +1,6 @@
 const assert = require("assert");
 const lib= require("./arrayProgramLib.js");
+const isSubset = lib.isSubset;
 const sum = lib.sumOfAllNumbers;
 const segregateEvenNumbers = lib.evenNumbers;
 const segregateOddNumbers = lib.oddNumbers;
@@ -21,6 +22,9 @@ const zipElements = lib.zipElements;
 const rotate = lib.rotate;
 const createPartition = lib.createPartition;
 const obtainIntersection = lib.obtainIntersection;
+const obtainDifference = lib.obtainDifference;
+const obtainUnique = lib.obtainUnique;
+const createUnion = lib.createUnion;
 
 //two test for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
@@ -162,3 +166,35 @@ assert.deepEqual(obtainIntersection([1],[1]),[1]);
 assert.deepEqual(obtainIntersection([1,2],[2]),[2]);
 assert.deepEqual(obtainIntersection([1,2,3,4],[2,4,6,8]),[2,4]);
 console.log("test for obtainIntersection passed");
+
+//tests for obtaining difference of two numberLists
+assert.deepEqual(obtainDifference([],[]),[]);
+assert.deepEqual(obtainDifference([1],[]),[1]);
+assert.deepEqual(obtainDifference([1,2],[3]),[1,2]);
+assert.deepEqual(obtainDifference([1,2,3,4,5,6],[2,4,6]),[1,3,5]);
+assert.deepEqual(obtainDifference([1,3,5,7,9,11,13,15,17],[2,3,5,7,11,13]),[1,9,15,17]);
+console.log("tests for obtaining difference passed");
+
+//tests for checking if a set is subset of given superset
+assert.deepEqual(isSubset([],[]),true);
+assert.deepEqual(isSubset([1],[]),true);
+assert.deepEqual(isSubset([],[1]),false);
+assert.deepEqual(isSubset([1],[2]),false);
+assert.deepEqual(isSubset([1,2],[2]),true);
+assert.deepEqual(isSubset(["a","b","c"],["b"]),true);
+assert.deepEqual(isSubset(["a","b","c","d","e","f","g","h","i","j"],["a","e","i"]),true);
+console.log("tests for is subset is working");
+
+// test for obtaining unique array from an array
+assert.deepEqual(obtainUnique([]),[]);
+assert.deepEqual(obtainUnique([1,2]),[1,2]);
+assert.deepEqual(obtainUnique([1,1]),[1]);
+assert.deepEqual(obtainUnique([1,2,2]),[1,2]);
+assert.deepEqual(obtainUnique([1,2,3,2,1]),[1,2,3]);
+assert.deepEqual(obtainUnique(["a","a"]),["a"]);
+console.log("test for obtaining unique set passed");
+
+// tests for obtaining union set 
+assert.deepEqual(createUnion([1],[]),[1]);
+assert.deepEqual(createUnion([1],[2]),[1,2]);
+assert.deepEqual(createUnion([1,2,3,4],[2,4,6,8]),[1,2,3,4,6,8]);

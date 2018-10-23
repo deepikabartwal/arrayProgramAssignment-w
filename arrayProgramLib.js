@@ -2,6 +2,26 @@ const isNumberEven = function(number){
   return(number%2==0);
 }
 
+const provideEven = function(number){
+  if(isNumberEven(number)){
+  return number;
+  }
+}
+
+const provideOdd = function(number){
+  if(!isNumberEven(number)){
+    return number;
+  }
+}
+
+const provideLength = function(text){
+  return text.length;
+}
+
+const sum = function(number1,number2){
+  return number1+number2;
+}
+
 const putInNewList = function(list){
   newList=[];
   for(let index = 0; index<list.length; index++){
@@ -22,31 +42,15 @@ const isGreater = function(number1,number2){
 }
 
 const segregateEven = function(numbers){
-  let evenNumbers = [];
-  for(let index = 0; index<numbers.length; index++){
-    if(isNumberEven(numbers[index])){
-      evenNumbers.push(numbers[index]);
-    }
-  }
-  return evenNumbers;
+  return numbers.filter(provideEven);
 }
 
 const segregateOdd = function(numbers){
-  let oddNumbers = [];
-  for(let index = 0; index<numbers.length; index++){
-    if(!isNumberEven(numbers[index])){
-      oddNumbers.push(numbers[index]);
-    }
-  }
-  return oddNumbers;
+  return numbers.filter(provideOdd);
 }
 
 const addAllNumbers = function(numbers){
-  let sum = 0;
-  for(let number of numbers){
-    sum+=number;
-  }
-  return sum;
+  return numbers.reduce(sum,0);
 }
 
 const reverseElementOrder = function(numbers){
@@ -220,6 +224,54 @@ const obtainIntersection = function(numberList1,numberList2){
   return intersection;
 }
 
+const obtainDifference = function(list1,list2){
+  difference =[];
+  listUsedForMatching =[];
+  for(let index = 0; index<list2.length; index++){
+    listUsedForMatching[list2[index]]=list2[index];
+  }
+  for(let index = 0; index<list1.length; index++){
+    if(listUsedForMatching[list1[index]]!=list1[index]){
+      difference.push(list1[index]);
+    }
+  }
+  return difference;
+}
+
+const isSubset = function(superset,subsetCandidate){
+  for(let index = 0; index<subsetCandidate.length; index++){
+    if(findPositionOfNumber(superset,subsetCandidate[index])==-1){
+      return false;
+    }
+  }
+  return true;
+}
+
+const obtainUnique = function(list){
+  uniqueList = [];
+  for( let index = 0;index<list.length;index++){
+    if(findPositionOfNumber(uniqueList,list[index])==-1){
+      uniqueList.push(list[index]);
+    }
+  }
+  return uniqueList;
+}
+
+const createUnion = function(set1,set2){
+  mergeOfTwoSets = set1.concat(set2);
+  unionSet = [];
+  for(index = 0;index<mergeOfTwoSets.length; index++){
+    if(findPositionOfNumber(unionSet,mergeOfTwoSets[index])==-1){
+      unionSet.push(mergeOfTwoSets[index]);
+    }
+  }
+  return unionSet;
+}
+
+exports.createUnion = createUnion;
+exports.obtainUnique = obtainUnique;
+exports.obtainDifference = obtainDifference;
+exports.isSubset = isSubset;
 exports.obtainIntersection = obtainIntersection;
 exports.createPartition = createPartition;
 exports.rotate = rotate;
