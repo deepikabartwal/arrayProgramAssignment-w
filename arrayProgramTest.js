@@ -1,5 +1,6 @@
 const assert = require("assert");
 const lib= require("./arrayProgramLib.js");
+const generateReverseFibonacci =lib.generateReverseFibonacci;
 const isSubset = lib.isSubset;
 const sum = lib.sumOfAllNumbers;
 const segregateEvenNumbers = lib.evenNumbers;
@@ -198,3 +199,12 @@ console.log("tests for obtaining unique set passed");
 assert.deepEqual(createUnion([1],[]),[1]);
 assert.deepEqual(createUnion([1],[2]),[1,2]);
 assert.deepEqual(createUnion([1,2,3,4],[2,4,6,8]),[1,2,3,4,6,8]);
+console.log("tests for creating union of sets passed");
+
+//tests for generating reverse fibonacci series
+assert.deepEqual(generateReverseFibonacci(0),[]);
+assert.deepEqual(generateReverseFibonacci(1),[0]);
+assert.deepEqual(generateReverseFibonacci(2),[1,0]);
+assert.deepEqual(generateReverseFibonacci(3),[1,1,0]);
+assert.deepEqual(generateReverseFibonacci(8),[13,8,5,3,2,1,1,0]);
+console.log("tests for generating reverse fibonacci series passed");

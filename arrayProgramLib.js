@@ -31,7 +31,7 @@ const convertToNumber = function(text){
 }
 
 const putInNewList = function(list){
-  newList=[];
+  let newList=[];
   for(let index = 0; index<list.length; index++){
     newList.push(list[index]);
   }
@@ -74,7 +74,7 @@ const reverseElementOrder = function(numbers){
 }
 
 const getAlternateNumbers = function(numbers){
-  alternateNumbers = [];
+ let  alternateNumbers = [];
   for(let index =0;index<numbers.length;index+=2){
     alternateNumbers.push(numbers[index]);
   }
@@ -96,8 +96,8 @@ const lowestNumber = function(numbers){
 }
 
 const calculateAverage = function(numbers){
- sumOfAllNumbers= numbers.reduce(sum,0);
-  countOfNumbers = numbers.length;
+ let sumOfAllNumbers= numbers.reduce(sum,0);
+  let countOfNumbers = numbers.length;
   if(countOfNumbers==0){
     return 0;
   }
@@ -122,7 +122,7 @@ const isGreaterThanValue = function(value){
   }
 }
 const countNumbersAboveThreshold = function(numbers,thresholdValue){
-  isGreaterThanThreshold = isGreaterThanValue(thresholdValue);
+  let isGreaterThanThreshold = isGreaterThanValue(thresholdValue);
   return numbers.filter(isGreaterThanThreshold).length;
 }
 
@@ -133,7 +133,7 @@ const isSmallerThanValue = function(value){
 }
 
 const countNumbersBelowThreshold = function(numbers,thresholdValue){
-  isSmallerThanThreshold = isSmallerThanValue(thresholdValue);
+  let isSmallerThanThreshold = isSmallerThanValue(thresholdValue);
   return numbers.filter(isSmallerThanThreshold).length;
 }
 
@@ -161,14 +161,14 @@ const isInDescendingOrder = function(numberList){
 
 
 const extractDigits = function(number){
-  givenNumber=number.toString();
-  digits = givenNumber.split("");
+  let givenNumber=number.toString();
+  let digits = givenNumber.split("");
   return digits.map(convertToNumber);
 }
 
 const zipElements = function(list1,list2){
-  limit = Math.min(list1.length,list2.length);
-  zippingResult = [];
+  let limit = Math.min(list1.length,list2.length);
+  let zippingResult = [];
   for(let index =0; index<limit;index++){
     zippingResult.push([list1[index],list2[index]]);
   }
@@ -176,8 +176,8 @@ const zipElements = function(list1,list2){
 }
 
 const rotate = function(list,limit){
-  listToBeRotated = putInNewList(list);
-  rotatedArray = listToBeRotated.splice(limit);
+  let listToBeRotated = putInNewList(list);
+  let rotatedArray = listToBeRotated.splice(limit);
   for(let count = 0; count < limit; count++){
     if(list.length>0){
       rotatedArray.push(list[count]);
@@ -186,17 +186,25 @@ const rotate = function(list,limit){
   return rotatedArray;
 }
 
-const createPartition = function(numbers,limit){
-  partitionList=[[],[]];
-  for(let index = 0;index<numbers.length;index++){
-    partitionList[isGreater(numbers[index],limit)].push(numbers[index]);
+const implantInPartition = function(limit){
+  return function(partitionList,number){
+    if(number>limit){
+      partitionList[1].push(number);
+      return partitionList;
+    }
+    partitionList[0].push(number);
+    return partitionList;
   }
-  return partitionList;
+}
+
+const createPartition = function(numbers,limit){
+  let partition = implantInPartition(limit);
+  return numbers.reduce(partition,[[],[]]);
 }
 
 const obtainIntersection = function(numberList1,numberList2){
-  intersection =[];
-  listForMatching = [];
+  let intersection =[];
+  let listForMatching = [];
   for(let number of numberList1){
     listForMatching[number] = number;
   }
@@ -209,8 +217,8 @@ const obtainIntersection = function(numberList1,numberList2){
 }
 
 const obtainDifference = function(list1,list2){
-  difference =[];
-  listUsedForMatching =[];
+  let difference =[];
+  let listUsedForMatching =[];
   for(let index = 0; index<list2.length; index++){
     listUsedForMatching[list2[index]]=list2[index];
   }
@@ -232,7 +240,7 @@ const isSubset = function(superset,subsetCandidate){
 }
 
 const obtainUnique = function(list){
-  uniqueList = [];
+  let uniqueList = [];
   for( let index = 0;index<list.length;index++){
     if(findPositionOfNumber(uniqueList,list[index])==-1){
       uniqueList.push(list[index]);
@@ -242,8 +250,8 @@ const obtainUnique = function(list){
 }
 
 const createUnion = function(set1,set2){
-  mergeOfTwoSets = set1.concat(set2);
-  unionSet = [];
+  let mergeOfTwoSets = set1.concat(set2);
+  let unionSet = [];
   for(index = 0;index<mergeOfTwoSets.length; index++){
     if(findPositionOfNumber(unionSet,mergeOfTwoSets[index])==-1){
       unionSet.push(mergeOfTwoSets[index]);
@@ -252,6 +260,25 @@ const createUnion = function(set1,set2){
   return unionSet;
 }
 
+const generateFibonacciSeries = function(limit){
+  let fibonacciSeries = [];
+  let previousTerm = -1;
+  let currentTerm = 1;
+  for(let count = 1; count<=limit; count++){
+    newTerm = previousTerm + currentTerm;
+    fibonacciSeries.push(newTerm);
+    previousTerm = currentTerm;
+    currentTerm = newTerm;
+  }
+  return fibonacciSeries;
+}
+
+const generateReverseFibonacci = function(limit){
+  let fibonacciSeries = generateFibonacciSeries(limit);
+  return fibonacciSeries.reverse();
+}
+
+exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.createUnion = createUnion;
 exports.obtainUnique = obtainUnique;
 exports.obtainDifference = obtainDifference;
