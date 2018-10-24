@@ -26,7 +26,7 @@ const obtainDifference = lib.obtainDifference;
 const obtainUnique = lib.obtainUnique;
 const createUnion = lib.createUnion;
 
-//two test for even number function.
+//two tests for even number function.
 assert.deepEqual(segregateEvenNumbers([]),[]);
 assert.deepEqual(segregateEvenNumbers([6,7,8,9]),[6,8]);
 console.log("tests for segregating even numbers passed");
@@ -49,12 +49,12 @@ console.log("tests for reversing numbers in list passed");
 //alternate numbers testing
 assert.deepEqual(alternateNumbers([1,2,3,4]),[1,3]);
 assert.deepEqual(alternateNumbers([2,1,4,3]),[2,4]);
-console.log("test for selecting alternate numbers in list passed");
+console.log("tests for selecting alternate numbers in list passed");
 
-//greatest number in array of number testing
+//greatests number in array of number testing
 assert.deepEqual(greatestNumber([]),undefined);
 assert.deepEqual(greatestNumber([23,0,15,167]),167);
-console.log("tests for finding greatest number in list passed");
+console.log("tests for finding greatests number in list passed");
 
 //lowest number in array of number testing
 assert.deepEqual(lowestNumber([]),undefined);
@@ -85,7 +85,7 @@ assert.deepEqual(countOddNumbers([1,3]),2);
 assert.deepEqual(countOddNumbers([22,13,45,23,16,19,2]),4);
 console.log("tests for counting odd numbers in given list passed");
 
-// test for counting numbers above threshold value
+// tests for counting numbers above threshold value
 assert.deepEqual(countNumbersAboveThreshold([],1),0);
 assert.deepEqual(countNumbersAboveThreshold([0],1),0);
 assert.deepEqual(countNumbersAboveThreshold([1,3],1),1);
@@ -93,7 +93,7 @@ assert.deepEqual(countNumbersAboveThreshold([1,2,3],1),2);
 assert.deepEqual(countNumbersAboveThreshold([2,3,4,5],1),4);
 console.log("tests for counting numbers above threshold value in list");
 
-// test for counting numbers below threshold value
+// tests for counting numbers below threshold value
 assert.deepEqual(countNumbersBelowThreshold([],1),0);
 assert.deepEqual(countNumbersBelowThreshold([4],1),0);
 assert.deepEqual(countNumbersBelowThreshold([1,3],2),1);
@@ -101,7 +101,7 @@ assert.deepEqual(countNumbersBelowThreshold([1,2,3],2),1);
 assert.deepEqual(countNumbersBelowThreshold([2,3,4,5],6),4);
 console.log("tests for counting numbers below threshold value in list");
 
-//test for finding position of number in given number list
+//tests for finding position of number in given number list
 assert.deepEqual(findPositionOfNumber([],0),-1)
 assert.deepEqual(findPositionOfNumber([1],0),-1);
 assert.deepEqual(findPositionOfNumber([1,2],1),0);
@@ -149,23 +149,23 @@ assert.deepEqual(rotate(["a","b","c"],2),["c","a","b"]);
 assert.deepEqual(rotate([1,2,3,4,5],2),[3,4,5,1,2]);
 assert.deepEqual(rotate(["ram","shyam","sita","radha"],1),["shyam","sita","radha","ram"]);
 assert.deepEqual(rotate(["this","is","an","array","i","made","right","now"],2),["an","array","i","made","right","now","this","is"]);
-console.log("test for rotating list elements are passing");
+console.log("tests for rotating list elements are passing");
 
-//test for function to create partition for numbers above and below a given value
+//tests for function to create partition for numbers above and below a given value
 assert.deepEqual(createPartition([],1),[[],[]]);
 assert.deepEqual(createPartition([1,2],1),[[1],[2]]);
 assert.deepEqual(createPartition([1],1),[[1],[]]);
 assert.deepEqual(createPartition([1,2,3,4,5],3),[[1,2,3],[4,5]]);
 assert.deepEqual(createPartition([22,13,41,56,87,95,79,68,2,102],50),[[22,13,41,2],[56,87,95,79,68,102]]);
-console.log("test for partitioning passed");
+console.log("tests for partitioning passed");
 
-//test for obtaining intersection of two numberLists
+//tests for obtaining intersection of two numberLists
 assert.deepEqual(obtainIntersection([],[]),[]);
 assert.deepEqual(obtainIntersection([1],[]),[]);
 assert.deepEqual(obtainIntersection([1],[1]),[1]);
 assert.deepEqual(obtainIntersection([1,2],[2]),[2]);
 assert.deepEqual(obtainIntersection([1,2,3,4],[2,4,6,8]),[2,4]);
-console.log("test for obtainIntersection passed");
+console.log("tests for obtainIntersection passed");
 
 //tests for obtaining difference of two numberLists
 assert.deepEqual(obtainDifference([],[]),[]);
@@ -185,14 +185,14 @@ assert.deepEqual(isSubset(["a","b","c"],["b"]),true);
 assert.deepEqual(isSubset(["a","b","c","d","e","f","g","h","i","j"],["a","e","i"]),true);
 console.log("tests for is subset is working");
 
-// test for obtaining unique array from an array
+// tests for obtaining unique array from an array
 assert.deepEqual(obtainUnique([]),[]);
 assert.deepEqual(obtainUnique([1,2]),[1,2]);
 assert.deepEqual(obtainUnique([1,1]),[1]);
 assert.deepEqual(obtainUnique([1,2,2]),[1,2]);
 assert.deepEqual(obtainUnique([1,2,3,2,1]),[1,2,3]);
 assert.deepEqual(obtainUnique(["a","a"]),["a"]);
-console.log("test for obtaining unique set passed");
+console.log("tests for obtaining unique set passed");
 
 // tests for obtaining union set 
 assert.deepEqual(createUnion([1],[]),[1]);
