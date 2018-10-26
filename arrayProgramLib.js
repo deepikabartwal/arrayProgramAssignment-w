@@ -260,23 +260,25 @@ const createUnion = function(set1,set2){
   return unionSet;
 }
 
-const generateFibonacciSeries = function(limit){
-  let fibonacciSeries = [];
-  let previousTerm = -1;
-  let currentTerm = 1;
-  for(let count = 1; count<=limit; count++){
-    newTerm = previousTerm + currentTerm;
-    fibonacciSeries.push(newTerm);
-    previousTerm = currentTerm;
-    currentTerm = newTerm;
+const generateFiboTerm = function(number){
+  if(number<2){
+    return number;
   }
-  return fibonacciSeries;
+  return generateFiboTerm(number-1)+generateFiboTerm(number-2);
 }
 
 const generateReverseFibonacci = function(limit){
+  let reverseFibonacciSeries =[];
+  for(let count = limit-1; count>=0; count--){
+    reverseFibonacciSeries.push(generateFiboTerm(count));
+  }
+  return reverseFibonacciSeries;
+}
+
+/*const generateReverseFibonacci = function(limit){
   let fibonacciSeries = generateFibonacciSeries(limit);
   return fibonacciSeries.reverse();
-}
+}*/
 
 exports.generateReverseFibonacci = generateReverseFibonacci;
 exports.createUnion = createUnion;
